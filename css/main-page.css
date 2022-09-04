@@ -1,0 +1,210 @@
+@import url(main-styles.css);
+
+.page--content--wrapper{
+    overflow-x: hidden;
+    position: relative;
+}
+
+.projectsheader{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.projectsheader::after{
+    display: inline-block;
+    width: 130%;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.projectsheader:nth-child(1){
+    margin-top: 3%;
+}
+
+.sliderwrap{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.slider{
+    position: relative;
+    text-align: center;
+    margin: 0 0 4% 0;
+    font-size: 1.1em;
+    overflow-x: hidden;
+    transition: var(--slider-t);
+}
+.curr{
+    transform: unset;
+}
+.next{
+    position: absolute;
+    transform: translateX(410%);
+}
+.prev{
+    position: absolute;
+    transform: translateX(-410%);
+}
+.other{
+    position: absolute;
+    transform: translateX(450%);
+}
+
+.slider h2{
+    font-size: 2.4em;
+}
+.projecttitle{
+    position: relative;
+    display: inline-block;
+}
+.projecttitle::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    height: 1.5px;
+    width: 105%;
+}
+.projectdesc{
+    font-size: 1.3em;
+    line-height: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 1.3em;
+    text-align: justify;
+}
+.projectlink{
+    display: inline-block;
+    margin: 20px 0;
+}
+.subsidy-text{
+    margin: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.1em;
+}
+.subsidy-text:nth-of-type(2){
+    margin-top: 10px;
+}
+.mobile-adnot{
+    display: none;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.slider .cardimg{
+    height: 40vh;
+    object-fit: contain;
+    background-blend-mode:screen;
+    margin: 2% 0; 
+    border-radius: 10px;
+
+    user-select: none;
+}
+.sfigure{
+    margin-top: 10px;
+}
+.link-inline{
+    display: inline-block;
+    margin: 0;
+}
+
+[class^="arrow"]{
+    height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    transform: rotate(45deg);
+    
+}
+[class^="arrow"]:hover{
+    cursor: pointer;
+}
+.arrowleft{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.arrowright{
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+.arrowleft.contrast, .arrowright.contrast{
+    background-color: rgba(0,0,0,0);
+}
+.arrow-disabled{
+    border: none;
+}
+.arrow-disabled:hover{
+    cursor: default;
+}
+
+.r10photo{
+    background-image: url("images/rakowicka10.jpg");
+    background-size: contain;
+    background-position: bottom;
+}
+
+.mis{
+    position: relative;
+    width: fit-content;
+    text-align: right;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+.t1{
+    font-size: 2em;
+}
+.t2, .t4{
+    font-size: 1.2em;
+}
+.t3{
+    font-size: 1.8em;
+}
+.t5{
+    font-size: 0.85em;
+}
+.t6{
+    font-size: 1.1em;
+}
+.t7{
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 1100px) { 
+    .mobile-adnot{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .mis{
+        font-size: 1em;
+    }
+    .miscont::after,
+    .miscont::before{
+        width: 110%;
+    }
+    .projecttitle::after{
+        width: 103%;
+    }
+}
+@media only screen and (max-width: 750px) { 
+    .projectdesc{
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 500px) { 
+    .projecttitle::after{
+        width: 101%;
+    }
+}
+@media only screen and (max-width: 400px) { 
+    .mis{
+        font-size: 0.9em;
+    }
+}

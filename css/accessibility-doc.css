@@ -1,0 +1,35 @@
+@import url(main-styles.css);
+
+.page--content--wrapper h1, h2{
+    font-weight: bold;
+}
+strong{
+    display: inline;
+    background-color: var(--main);
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+.content--container{
+    padding: 3%;
+    text-align: left;
+    line-height: 1.4em;
+    font-size: 1.3em;
+}
+.content--container p{
+    margin: 1em 0;
+}
+.page--content--wrapper ul{
+    list-style-type: disc;
+}
+.page--content--wrapper li{
+    margin-left: 2em;
+}
+.acinst a{
+    text-decoration: underline;
+}
+@media only screen and (max-width: 1100px){
+    .page--content--wrapper{
+        margin-bottom: 40px;
+    }
+}

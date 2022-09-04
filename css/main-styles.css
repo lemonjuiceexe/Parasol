@@ -1,0 +1,403 @@
+/*
+Universal styles for all pages c: 
+*/
+@import url(reset.css);
+@import url(content-types.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&family=Raleway&family=Roboto+Mono:wght@100&display=swap');
+
+/*Accessibility*/
+.contrast:not(.partners > a, .partners > a > img, [class^="arrow"]){
+    background-color: #2d3150 !important;
+    color: rgb(214, 214, 69);
+    filter: invert(0) !important;
+}
+.contrast.partners > a:not(.exact), .contrast.partners > a:not(.exact) > img{
+    background-color: #fff;
+    color: rgb(214, 214, 69);
+}
+body.contrast{
+    background-image: none;
+}
+.tt.contrast::before, .tt.contrast::after,
+.cont1.contrast::before, .cont1.contrast::after{
+    background-color: rgb(214, 214, 69);;
+}
+.slider.contrast{
+    border:2px solid rgb(214, 214, 69); 
+}
+.sfigure.contrast{
+    margin: 0;
+}
+[class^="arrow"].contrast{
+    border-color: rgb(214, 214, 69);
+    border-width: 4px;
+}
+.menu--wrapper.contrast{
+    border-bottom: 1px solid rgb(214, 214, 69);
+}
+header.contrast{
+    margin-bottom: -3vh;
+}
+footer.contrast{
+    padding-top: 10px;
+    border-top: 1px solid rgb(214, 214, 69);
+}
+.hover-white.contrast::after{
+    background-color: rgb(214, 214, 69);
+}
+.projecttitle.contrast::after{
+    background-color: rgb(214, 214, 69);
+}
+a:not(.menu a, .docs a, footer a, .projectlink).contrast{
+    text-decoration: underline;
+}
+
+.content--container{
+    background-color: var(--second);
+    border-radius: 10px;
+    margin: 5%;
+    padding: 0%
+}
+/*Root, main, universal tags*/
+:root{
+    --bg: #f4eeff;
+    --main: #424874;
+    --on-main: #1f223a;
+    --first: #a6b1e1;
+    --second: #dcd6f7;
+    
+    --slider-t: all 800ms;
+}
+html{
+    scroll-behavior: smooth;
+    padding: 0%;
+    scrollbar-width: thin;
+    scroll-padding-top: 100vh;
+}
+body{
+    background-image: url("images/background.png");
+    
+    background-blend-mode: overlay;
+    width: 100vw;
+    overflow-x: hidden;
+    background-size: 45%;
+    background-color: #f4eeff;
+    min-height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+.wrapper{
+    overflow-x: hidden;
+    position: relative;
+    height: fit-content;
+}
+strong{
+    font-weight: bold;
+}
+
+.contrast::selection, .contrast::-moz-selection{
+    background-color: rgb(214, 214, 69);
+    color: black;
+}
+.hover-white.contrast::after,
+.hover-black.contrast::after{
+    background-color: rgb(214, 214, 69);
+}
+img.acimg.contrast{
+    background-color: unset !important;
+}
+/*Hovers*/
+.hover-white::after{
+    background-color: #fff;
+}
+.hover-black::after{
+    background-color: #000;
+}
+.line-hover{
+    
+    position: relative;
+    display: inline-block;
+}
+.line-hover::after{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 0;
+    transition: all 300ms ease-out;
+    margin: auto;
+}
+.line-hover:hover::after{
+    width: 100%;
+}
+
+.menu .line-hover:hover::after{
+    width: 0%;
+}
+
+/*Universal sections*/
+.menu--wrapper{
+    position: sticky;
+    background-color: var(--main);
+    z-index: 10;
+    top: 0;
+}
+header{
+    background-color: var(--main);
+    width: 100%;
+    min-height: calc(30px + 1em + 20px + 5px);
+    height: 8vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: left;
+    align-items: center;
+    color: #fff;
+    font-size: 1.4em;
+    z-index: 10;
+}
+header.contrast{
+    min-height: calc(30px + 1em + 20px + 5vh);
+}
+.menu{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.upper--menu{
+    background-color: var(--main);
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.upper--menu > *{
+    margin: 0 30px;
+}
+.logo{
+    background-image: url("images/logo.png");
+    width: 20%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.accessibility--container{
+    display: flex;
+    justify-content: space-around;
+ 
+    border-radius: 45px;
+    width: 17vw;
+   
+}
+.accessibility--button{
+    width: 20%;
+    object-fit: contain;
+ }
+ .accessibility--button:not(a){
+    filter: invert(1);
+ }
+ a.accessibility--button{
+    display: flex; justify-content: center; align-items: center;
+ }
+ a.accessibility--button > img{
+    filter: invert(2);
+ }
+ .accessibility--button:hover{
+    cursor: pointer;
+ }
+ .acimg{
+    height: 70%;
+    object-fit: contain;
+ }
+ .menu li{
+    min-width: 15%;
+    text-align: center;
+}
+.menu li a{
+    display: inline-block;
+    border-radius: 10px;
+    background-color: var(--on-main);
+    padding: 15px;
+    width: 100%;
+    transition: 0.2s all ease-in;
+}
+.menu li a:hover{
+    box-shadow: #1f223a 0px 0px 10px;
+}
+.menu.contrast li a{
+    border: 1px solid rgba(255,255,255,0);
+}
+.menu.contrast li a:hover{
+    border: 1px solid rgba(214, 214, 69, 1);
+}
+
+/*Color bar*/
+.color-bar{
+    width: 100%;
+    height: 3vh;
+}
+.s-c-b{
+    margin-top: -2.5vh;
+    position: absolute;
+    transform: rotate(180deg);
+}
+.color-bar > div{
+    width: 100%;
+}
+.cb-child-1{
+    background-color: var(--first);
+    height: 65%;
+}
+.cb-child-2{
+    background-color: var(--second);
+    height: 35%;
+}
+
+/*Footer*/
+footer{
+    width: 100%;
+    height: fit-content;
+    overflow-y: hidden;
+    background-color: var(--main);
+    color: #fff;
+    position: relative;
+}
+.footer--main--container{
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer--pagenav{
+    margin: 2%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.footer--pagenav li{
+    margin: 10px 0;
+    width: fit-content;
+}
+.footer--contact{
+    line-height: 2rem;
+}
+.footer--copyright
+{
+    position: relative;
+    bottom: 0;
+    display: inline-grid; place-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #2d3150;
+    border-radius: 5px;
+    padding: 1vh;
+}
+.footer--map{
+    margin: 1vw;
+    border-radius: 15px;
+}
+.sfigure.content--container{
+    
+    background-blend-mode: soft-light;
+}
+
+@media only screen and (max-width: 1500px) { 
+    header{
+        min-height: calc(30px + 1em + 20px + 5px + 1em);
+    }
+}
+@media only screen and (max-width: 1100px) {
+    html{
+        scroll-padding-top: 20px;
+    }
+    main{
+        font-size: 0.8em;
+    }
+    .upper--menu{
+        flex-direction: column;
+        height: unset;
+    }
+    .logo{
+        min-height: 15vh;
+    }
+    .accessibility--container{
+        width: 90%;
+        max-width: 300px; 
+    }
+    .upper--menu > *{
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    header, .menu--wrapper{
+        position:relative;
+        height: auto;
+    }
+    .line-hover{
+        margin: 10px;
+    }
+    .menu{
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu > li{
+        width:75%;
+    }
+        
+    .arrowright, .arrowleft{
+        display: none;
+    }
+    .card{
+        width: 100%;
+    }
+    .footer--main--container{
+        flex-direction: column;
+    }
+    .footer--pagenav{
+        width: 100%;
+        align-items: center;
+    }
+    .footer--contact{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .footer--pagenav::after{
+        display: block;
+        content: "";
+        width:75%;
+        margin: auto;
+        background-color: var(--first);
+        height: 5px;
+        border-radius: 2px;
+    }
+    .footer--contact::after{
+        display: block;
+        content: "";
+        width:75%;
+        margin: auto;
+        background-color: var(--first);
+        height: 5px;
+        border-radius: 2px;
+        margin-top: 10px;
+    }
+    .footer--contact.contrast::after, .footer--pagenav.contrast::after{
+        background-color: rgb(214, 214, 69);
+    }
+    .footer--map{
+        margin: 20px 0;
+    }
+    
+    .support{
+        margin-left: 1em;
+    }
+}
+@media only screen and (max-width: 610px) { 
+    .accessibility--container > *:nth-child(4){
+        display: none;
+    }
+}

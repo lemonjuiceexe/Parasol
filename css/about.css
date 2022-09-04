@@ -1,0 +1,240 @@
+@import url(main-styles.css);
+
+.miscont{
+    padding: 0; margin: 0;
+}
+.miscont::after, .miscont::before{
+    all: unset;
+}
+.mis{
+    position: relative;
+    width: fit-content;
+    text-align: right;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+}
+.mst{
+    font-size: 1.1em;
+}
+
+.tt{
+    text-align: center;
+    width: 94%;
+    font-size: 2.6em;
+}
+.tt::after{
+    display: block;
+    content: "";
+    height: 1px;
+    width: 90%;
+    position:initial;
+    background-color: #000;
+}
+
+.abtp{
+    padding: 2%;
+    line-height: 1.3em;
+}
+
+.board{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+.person{
+    display: grid;
+    margin: 1%;
+    height: fit-content;
+    width: fit-content;
+}
+.personname, .personpos, .persondesc{
+    display: inline-block;
+}
+.person .cardimg{
+    grid-row: 1;
+    grid-column: 1;
+    display: inline-block;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 150px;
+    width: auto;
+}
+.namedesc{
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 1.1em;
+}
+.namedesc > *{
+    margin: 20px;
+    width: 95%;
+}
+.personname{
+    font-size: 1.7em;
+    margin: 20px 20px 0 20px;
+    height: 20%;
+}
+.personpos{
+    height: 30%;
+    margin: 5px 20px 0 20px;
+}
+
+.projects{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.arr{
+    width: 3px;
+    height: 100%;
+    margin: 10% 20px;
+    background-color: #000;
+}
+.project{
+    width: 60%;
+    margin: 5% 15%;
+}
+
+/*docs*/
+.docs{
+    padding: 1%;
+}
+.docs ul{
+    font-size: 2em;
+    margin: 10px 40px;
+    list-style-type: decimal;
+}
+.docs ul li{
+    margin: 10px 0;
+}
+
+.popuplink:hover{
+    cursor: pointer;
+}
+.popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg);
+    border-radius: 7px;
+    width: 80vw;
+    height: 60vh;
+    z-index: 1;
+    font-size: 2vmax;
+    text-align: center;
+    line-height: 2em;
+    padding: calc(6px + 2em) 6px 6px 6px;
+    border: 1px solid black;
+    flex-flow: column nowrap; justify-content: space-evenly; align-items: center;
+}
+.popupclose{
+    position: absolute;
+    background-color: #fff;
+    font-size: 1em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    right: 10px;
+    top: 10px;
+    user-select: none;
+}
+.popupclose:hover{
+    cursor: pointer;
+}
+.popup ul{
+    list-style-type: decimal;
+}
+.popup strong{
+    display: inline;
+    background-color: var(--main);
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
+
+/*partners*/
+.partners{
+    padding:1%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.partners img{
+    border-radius: 10px;
+}
+.partners a{
+    display: inline-block;
+    height: 100px;
+    width: 24%;
+    margin: 20px 3%;
+}
+.partners a:not(.exact){
+    background-color: #fff;
+    border-radius: 10px;
+}
+.partners a > img{
+    position: relative;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ngo{
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 1100px) {
+    .board{
+        flex-direction: column;
+        align-items: unset;
+    }
+    .person .cardimg{
+        width: 112px;
+    }
+    .popup{
+        font-size: 3vmax;
+        height: 90vh;
+    }
+    .popup a{
+        font-size: 1em;
+    }
+    .partners{
+        flex-flow: column nowrap;
+    }
+    .partners a{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .partners{
+        margin-bottom: 10%;
+    }
+}
+@media only screen and (max-width: 500px){
+    main{
+        font-size: 0.8em;
+    }
+}
+@media only screen and (max-width: 460px){ 
+    .popup a{
+        font-size: 0.7em;
+    }
+}
+@media only screen and (max-width: 400px){
+    .partners a{
+        width: 92%;
+    }
+    .content--container{
+        margin: 10px;
+    }
+    .personname, .personpos{
+        margin-right: 0;
+    }
+}
