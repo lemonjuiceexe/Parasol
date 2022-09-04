@@ -52,6 +52,7 @@ function popupopen(){
     ls = window.pageXOffset || document.documentElement.scrollLeft;
     window.onscroll = () => { 
         window.scrollTo(ls, ts);
+        console.log("scroll");
     }
 }
 function popupclose(){

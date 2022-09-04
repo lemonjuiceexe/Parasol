@@ -73,7 +73,7 @@ html{
     scroll-behavior: smooth;
     padding: 0%;
     scrollbar-width: thin;
-    scroll-padding-top: 100vh;
+    /* scroll-padding-top: 100vh; */
 }
 body{
     background-image: url("images/background.png");
