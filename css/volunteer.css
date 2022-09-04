@@ -57,7 +57,4 @@ strong{
     ul.vol strong{
         font-size: 0.7em;
     }
-    ul li:nth-child(1) a{
-        font-size: 0.83em;
-    }
 }
